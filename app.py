@@ -17,7 +17,7 @@ def process_sleep():
     sleep_value = int(sleep_value)
     time.sleep(sleep_value)
     
-    version = os.environ.get('version', 'undefined')  # Obtener el valor de la variable de entorno "version" o asignar 'undefined' si no existe
+    version = os.environ.get('VERSION', 'undefined')  # Obtener el valor de la variable de entorno "version" o asignar 'undefined' si no existe
 
     return jsonify({'message': f'Holis, dormi {sleep_value} segundos', 'version': version})
 

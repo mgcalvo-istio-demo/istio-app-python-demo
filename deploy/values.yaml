@@ -51,7 +51,7 @@ istio-lib-helm:
 
   service:
     type: ClusterIP
-    port: 80
+    port: 8080
 
   ingress:
     enabled: false
@@ -97,7 +97,7 @@ istio-lib-helm:
 
   livenessProbe:
     path: /
-    port: 80
+    port: 8080
     initialDelaySeconds: 30
     periodSeconds: 10
     timeoutSeconds: 5

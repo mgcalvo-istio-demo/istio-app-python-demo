@@ -8,8 +8,11 @@ WORKDIR /app
 COPY app.py /app
 COPY requirements.txt /app
 
-# Instala las dependencias
+# Instalar las dependencias
 RUN pip install --no-cache-dir -r requirements.txt
+
+# Instalar curl
+RUN apt-get update && apt-get install -y curl
 
 # Crea un usuario no root
 RUN useradd -m -U python
