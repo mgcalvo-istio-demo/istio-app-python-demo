@@ -7,4 +7,4 @@ appVersion: "0.1.0"
 dependencies:
   - name: istio-lib-helm
     version: 0.1.0
-    repository: "https://challenge-devsu.github.io/libhelm/"
+    repository: "https://mgcalvo-istio-demo.github.io/istio-lib-helm/"
