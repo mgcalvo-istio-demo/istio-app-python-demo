@@ -117,3 +117,6 @@ istio-lib-helm:
   configmapToEnv:
     commonconfigmap1: "contenido-commonconfigmap1"
     commonconfigmap2: "contenido-commonconfigmap2"
+
+  VirtualService:
+    timeout: 4s
