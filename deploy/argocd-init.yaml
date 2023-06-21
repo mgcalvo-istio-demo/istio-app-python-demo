@@ -1,0 +1,52 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: istio-app-python-demo
+  namespace: argocd
+spec:
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
+  description: istio
+  destinations:
+  - namespace: '*'
+    server: '*'
+  sourceRepos:
+  - '*'
+---
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: istio-app-python-demo
+  namespace: argocd
+spec:
+  generators:
+  - clusters: {}
+  template:
+    metadata:
+      name: istio-app-python-demo
+    spec:
+      destination:
+        namespace: istio-app-python-demo
+        server: https://kubernetes.default.svc
+      ignoreDifferences:
+      - kind: ServiceAccount
+        jsonPointers:
+        - /imagePullSecrets
+        - /secrets
+      project: istio-app-python-demo
+      source:
+        helm:
+          valueFiles:
+          - values.yaml
+        path: .
+        repoURL: https://github.com/mgcalvo-istio-demo/istio-app-python-demo.git
+        targetRevision: main
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+        - Replace=false
+        - PruneLast=true
+        - CreateNamespace=true
