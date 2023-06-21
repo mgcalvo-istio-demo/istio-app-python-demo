@@ -39,7 +39,7 @@ spec:
         helm:
           valueFiles:
           - values.yaml
-        path: .
+        path: deploy
         repoURL: https://github.com/mgcalvo-istio-demo/istio-app-python-demo.git
         targetRevision: main
       syncPolicy:
