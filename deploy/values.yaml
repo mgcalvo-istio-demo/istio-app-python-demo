@@ -6,17 +6,17 @@ istio-lib-helm:
   replicaCount: 1
 
   image:
-    repository: nginx
-    pullPolicy: IfNotPresent
+    repository: matiasgonzalocalvo/istio-app-python-demo
+    pullPolicy: Always
     ports:
       - name: http
-        containerPort: 80
+        containerPort: 8080
         protocol: TCP
     # Overrides the image tag whose default is the chart appVersion.
     tags: 
-      - version: 1.19.6
+      - version: 0.0.1
         weight: 50
-      - version: 1.19.5
+      - version: 0.0.2
         weight: 50
 
   imagePullSecrets: []
@@ -106,7 +106,7 @@ istio-lib-helm:
 
   readinessProbe:
     path: /
-    port: 80
+    port: 8080
     initialDelaySeconds: 30
     periodSeconds: 10
     timeoutSeconds: 5
