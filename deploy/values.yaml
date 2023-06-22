@@ -120,3 +120,12 @@ istio-lib-helm:
 
   VirtualService:
     timeout: 4s
+
+  destinationRule:
+    trafficPolicyEnabled: true
+    trafficPolicy:
+      outlierDetection:
+        consecutiveErrors: 1
+        interval: 1s
+        baseEjectionTime: 3m
+        maxEjectionPercent: 100    
