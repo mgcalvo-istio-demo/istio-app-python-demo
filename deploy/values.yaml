@@ -127,5 +127,5 @@ istio-lib-helm:
       outlierDetection:
         consecutiveErrors: 1
         interval: 1s
-        baseEjectionTime: 3m
+        baseEjectionTime: 30s
         maxEjectionPercent: 100    
