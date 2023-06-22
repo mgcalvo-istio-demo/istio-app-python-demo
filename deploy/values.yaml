@@ -126,6 +126,6 @@ istio-lib-helm:
     trafficPolicy:
       outlierDetection:
         consecutiveErrors: 1
-        interval: 10s
+        interval: 4s
         baseEjectionTime: 30s
         maxEjectionPercent: 100    
