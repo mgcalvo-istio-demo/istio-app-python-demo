@@ -2,6 +2,7 @@ from flask import Flask, jsonify
 import time
 import os
 import socket
+import datetime
 
 app = Flask(__name__)
 
@@ -23,7 +24,9 @@ def process_sleep():
 
     version = os.environ.get('VERSION', 'undefined')  # Obtener el valor de la variable de entorno "version" o asignar 'undefined' si no existe
 
-    return jsonify({'message': f'Holis, dormi {sleep_value} segundos', 'version': version, 'hostname': hostname})
+    fecha_actual = datetime.datetime.now()
+    
+    return jsonify({'message': f'Holis, dormi {sleep_value} segundos', 'version': version, 'hostname': hostname, 'fecha_actual': fecha_actual})
 
 def read_sleep_value():
     sleep_file = '/tmp/sleep'
