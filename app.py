@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, make_response, jsonify
 import time
 import os
 import socket
@@ -42,7 +42,7 @@ def process_sleep():
 
     fecha_actual = datetime.datetime.now()
     
-    return jsonify({'message': f'Holis, dormi {sleep_value} segundos', 'version': version, 'hostname': hostname, 'fecha_actual': fecha_actual, 'url': url, 'status_code': response.status_code})
+    return make_response(jsonify({'message': f'Holis, dormi {sleep_value} segundos', 'version': version, 'hostname': hostname, 'fecha_actual': fecha_actual, 'url': url, 'status_code': response.status_code}), response.status_code)
 
 def read_sleep_value():
     sleep_file = '/tmp/sleep'
