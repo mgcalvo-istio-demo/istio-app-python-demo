@@ -3,13 +3,29 @@ import time
 import os
 import socket
 import datetime
+import random
+import requests
 
 app = Flask(__name__)
 
 @app.route('/api')
 def process_sleep():
     sleep_value = read_sleep_value()
-    
+    urls = [
+        "http://www.google.com",
+        "http://www.yahoo.com",
+        "http://www.example.com",
+        "http://www.openai.com",
+        "http://www.python.org",
+        "http://www.github.com",
+        "http://www.stackoverflow.com",
+        "http://www.medium.com",
+        "http://www.amazon.com",
+        "http://www.microsoft.com"
+    ]
+    url = random.choice(urls)
+    response = requests.get(url)
+
     if sleep_value is None:
         return jsonify({'error': 'El archivo no existe'}), 500
     
@@ -26,7 +42,7 @@ def process_sleep():
 
     fecha_actual = datetime.datetime.now()
     
-    return jsonify({'message': f'Holis, dormi {sleep_value} segundos', 'version': version, 'hostname': hostname, 'fecha_actual': fecha_actual})
+    return jsonify({'message': f'Holis, dormi {sleep_value} segundos', 'version': version, 'hostname': hostname, 'fecha_actual': fecha_actual, 'url': url, 'status_code': response.status_code})
 
 def read_sleep_value():
     sleep_file = '/tmp/sleep'

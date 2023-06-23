@@ -14,7 +14,7 @@ istio-lib-helm:
         protocol: TCP
     # Overrides the image tag whose default is the chart appVersion.
     tags: 
-      - version: 0.0.1
+      - version: 0.0.3
         weight: 100
       # - version: 0.0.2
       #   weight: 50
