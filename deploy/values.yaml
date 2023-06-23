@@ -121,7 +121,7 @@ istio-lib-helm:
     commonconfigmap2: "contenido-commonconfigmap2"
 
   virtualService:
-    timeout: 5s
+    timeout: 2s
 
   destinationRule:
     trafficPolicyEnabled: true
