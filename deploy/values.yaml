@@ -15,9 +15,9 @@ istio-lib-helm:
     # Overrides the image tag whose default is the chart appVersion.
     tags: 
       - version: 0.0.1
-        weight: 100
-      # - version: 0.0.2
-      #   weight: 50
+        weight: 50
+      - version: 0.0.3
+        weight: 50
 
   imagePullSecrets: []
   nameOverride: ""
@@ -101,7 +101,7 @@ istio-lib-helm:
     port: 8080
     initialDelaySeconds: 5
     periodSeconds: 10
-    timeoutSeconds: 5
+    timeoutSeconds: 10
     failureThreshold: 6
     successThreshold: 1
 
@@ -111,7 +111,7 @@ istio-lib-helm:
     port: 8080
     initialDelaySeconds: 5
     periodSeconds: 10
-    timeoutSeconds: 5
+    timeoutSeconds: 10
     failureThreshold: 6
     successThreshold: 1
 
@@ -121,7 +121,7 @@ istio-lib-helm:
     commonconfigmap2: "contenido-commonconfigmap2"
 
   virtualService:
-    timeout: 1s
+    timeout: 5s
 
   destinationRule:
     trafficPolicyEnabled: true
