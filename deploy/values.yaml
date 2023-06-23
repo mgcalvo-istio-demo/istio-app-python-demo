@@ -15,9 +15,9 @@ istio-lib-helm:
     # Overrides the image tag whose default is the chart appVersion.
     tags: 
       - version: 0.0.1
-        weight: 10
+        weight: 99
       - version: 0.0.3
-        weight: 90
+        weight: 1
 
   imagePullSecrets: []
   nameOverride: ""
