@@ -23,8 +23,8 @@ def process_sleep():
     sleep_value = int(sleep_value)
     time.sleep(sleep_value)
 
-    salida = callSimple(sleep_value, start_time)
-    #salida = callUrls(sleep_value, start_time)
+    #salida = callSimple(sleep_value, start_time)
+    salida = callUrls(sleep_value, start_time)
     
     return salida
     
