@@ -32,10 +32,10 @@ def process_sleep():
 def callUrls(sleep_value, start_time):
     urls = [
         "http://www.google.com",
-        "http://www.yahoo.com",
+        #"http://www.yahoo.com",
         "http://www.example.com",
-        "http://www.openai.com",
-        "http://www.python.org",
+        #"http://www.openai.com",
+        #"http://www.python.org",
         "http://www.github.com",
         "http://www.stackoverflow.com",
         "http://www.medium.com",
