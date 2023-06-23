@@ -16,8 +16,8 @@ istio-lib-helm:
     tags: 
       - version: 0.0.1
         weight: 100
-      # - version: 0.0.3
-      #   weight: 1
+      - version: 0.0.3
+        weight: 1
 
   imagePullSecrets: []
   nameOverride: ""
